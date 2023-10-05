@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0 20px;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.showcase {
+  text-align: center;
+}
+
+.showcase h1 {
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 25%;
+}
