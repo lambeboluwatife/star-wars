@@ -1,7 +1,7 @@
 const Loading = () => {
   return (
-    <div>
-      <h4>Loading</h4>
+    <div className="loading">
+      <span className="loader"></span>
     </div>
   );
 };

@@ -17,23 +17,28 @@ function getImagePoster(image) {
 
 const Movies = ({ data }) => {
   return (
-    <div className="movies">
-      {data.results.map((movie) => (
-        <div className="movie">
-          <img src={getImagePoster(movie.title)} alt="" />
-          <div className="movie-info">
-            <h3>{movie.title}</h3>
-            <h6>{movie.release_date}</h6>
-            <div className="overview">
-              <h3>Opening Crawl</h3>
-              <p>{movie.opening_crawl}</p>
-              <h6>Released On: {movie.release_date}</h6>
-              <a href="#">More Info</a>
+    <>
+      <h5 style={{ textAlign: "center" }}>
+        Hover or click on image to view details.
+      </h5>
+      <div className="movies">
+        {data.map((movie) => (
+          <div className="movie" key={movie.episode_id}>
+            <img src={getImagePoster(movie.title)} alt="" />
+            <div className="movie-info">
+              <h3>{movie.title}</h3>
+              <h6>{movie.release_date}</h6>
+              <div className="overview">
+                <h3>Opening Crawl</h3>
+                <p>{movie.opening_crawl}</p>
+                <h6>Released On: {movie.release_date}</h6>
+                <a href="#">More Info</a>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 
