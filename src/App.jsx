@@ -12,14 +12,14 @@ const App = () => {
       fetch("https://swapi.dev/api/films").then((res) => res.json()),
   });
 
-  console.log(data?.results);
+  console.log(data);
 
   return (
     <>
       {isLoading && <Loading />}
       {error && <h4>An error has occurred: {error.message}</h4>}
       <Showcase />
-      <Movies data={data} />
+      {data?.results?.length > 0 && <Movies data={data?.results} />}
     </>
   );
 };

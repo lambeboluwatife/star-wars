@@ -74,7 +74,8 @@ body {
   transition: transform 0.3s ease-in;
 }
 
-.overview h3 {
+.overview h3,
+.overview h6 {
   color: #000;
   margin-bottom: 0.5rem;
 }
@@ -96,4 +97,55 @@ body {
 
 .movie:hover .overview {
   transform: translateY(0);
+}
+
+.loading {
+  text-align: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  background: #ffe81f;
+  animation: rotate 1s linear infinite;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.2);
+    border-radius: 10%;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+    border-radius: 50%;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.2);
+    border-radius: 10%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .loader {
+    left: 47%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .movies {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .loader {
+    left: 45%;
+    height: 40px;
+    width: 40px;
+  }
 }
